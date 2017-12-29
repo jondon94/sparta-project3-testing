@@ -10,18 +10,24 @@ class NeoControl < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  $neo_pull = CurrentNeoData.new
+  # $neo = $neo_pull.get_neo_id(3542519)
+  $neo = $neo_pull.get_neo_id(3729835)
+
   get "/" do
     @title = 'Homepage'
     erb :'pages/homepage'
   end
 
   get "/neo" do
-    @title = "Near Earth Objects"
+    # @title = "Near Earth Objects"
+    @info = $neo
     erb :'pages/neo_index'
   end
 
   get "/neo/:id" do
-    @title = 'Example'
-    erb :'pages/neo_id'
+    id = params[:id].to_i
+    @info = $neo[id]
+    erb :'pages/show'
   end
 end
