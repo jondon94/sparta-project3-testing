@@ -1,0 +1,15 @@
+<form action="/<%= $neo['neo_reference_id'] %>" method="GET">
+  <div class="inputBox">
+    <label>Title</label>
+    <input type="text" name="title" placeholder="Enter a name" value="<%= $neo['name'] %>">
+  </div>
+  <div class="inputBox">
+    <input type="submit" value="Save Post">
+  </div>
+
+  <% if ($neo['neo_reference_id']) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+
+
+</form>

@@ -20,14 +20,17 @@ class NeoControl < Sinatra::Base
   end
 
   get "/neo" do
-    # @title = "Near Earth Objects"
-    @info = $neo
+    @title = "Near Earth Objects"
     erb :'pages/neo_index'
   end
 
   get "/neo/:id" do
     id = params[:id].to_i
-    @info = $neo[id]
     erb :'pages/show'
+  end
+
+  get '/new' do
+    @neo = CurrentNeoData.new
+    erb :'pages/new'
   end
 end
