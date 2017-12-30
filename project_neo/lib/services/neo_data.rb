@@ -1,5 +1,8 @@
 require 'httparty'
 require 'json'
+# require_relative '../../controllers/neo_controller'
+require 'sinatra'
+require 'sinatra/reloader'
 
 class CurrentNeoData
   include HTTParty

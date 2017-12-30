@@ -1,3 +1,5 @@
+require 'sinatra'
+require 'sinatra/reloader'
 require_relative '../lib/services/neo_data'
 
 class NeoControl < Sinatra::Base
