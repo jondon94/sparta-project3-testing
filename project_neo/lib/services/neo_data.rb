@@ -1,8 +1,8 @@
 require 'httparty'
 require 'json'
-# require_relative '../../controllers/neo_controller'
 require 'sinatra'
 require 'sinatra/reloader'
+require_relative '../../controllers/neo_controller'
 
 class CurrentNeoData
   include HTTParty
@@ -13,8 +13,8 @@ class CurrentNeoData
   #by ID
   base_uri 'https://api.nasa.gov/neo/rest/v1/neo'
 
-  def get_neo_id(id)
-    @current_neo_data_id = JSON.parse(self.class.get("/#{id}?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
+  def get_neo_id(neo_reference_id)
+    @current_neo_data_id = JSON.parse(self.class.get("/#{neo_reference_id}?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
   end
 
   def neo_ex_id
@@ -36,4 +36,4 @@ end
 
 x = CurrentNeoData.new
 # p x.neo_ex_id
-# p x.neo_ex
+p x.get_neo_id(3729835).keys

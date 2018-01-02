@@ -1,7 +1,7 @@
 <form action="/neo/<%= $neo['neo_reference_id'] %>" method="GET">
   <div class="inputBox">
     <label>ID</label>
-    <input type="text" placeholder="Enter an ID" value="<%= $neo['neo_reference_id'] %>">
+    <input type="text" placeholder="Enter an ID" value="<%= @neo %>">
   </div>
   <div class="inputBox">
     <input type="submit" value="Show">
