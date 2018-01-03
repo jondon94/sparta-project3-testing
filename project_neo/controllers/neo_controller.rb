@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pg'
 require_relative '../lib/services/neo_data'
 
 class NeoControl < Sinatra::Base
@@ -16,10 +17,11 @@ class NeoControl < Sinatra::Base
 
   # Comment these out for rspec tests
   # $neo_pull = CurrentNeoData.new
+  # @neo = CurrentNeoData.new
   # $neo = $neo_pull.neo_ex_id
   # $neo = $neo_pull.get_neo_id(3542519)
   # $neo = $neo_pull.get_neo_id(3729835)
-  # $neo = $neo_pull.get_neo_id(@neo)
+  # $neo = $neo_pull.get_neo_id()
 
   get "/" do
     @title = 'Homepage'
@@ -32,11 +34,13 @@ class NeoControl < Sinatra::Base
   end
 
   get "/neo/:id" do
+    @neo = CurrentNeoData.new
     id = params[:neo_reference_id].to_i
     erb :'pages/show'
   end
 
   get '/new' do
+    @neo = CurrentNeoData.new
     erb :'pages/new'
   end
 end

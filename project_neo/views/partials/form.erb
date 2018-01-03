@@ -1,13 +1,13 @@
-<form action="/neo/<%= $neo['neo_reference_id'] %>" method="GET">
+<form action="/neo/<%= @neo.current_neo_data_id %>" method="GET">
   <div class="inputBox">
     <label>ID</label>
-    <input type="text" placeholder="Enter an ID" value="<%= @neo %>">
+    <input type="search" placeholder="Enter an ID" value="<%= @neo %>">
   </div>
   <div class="inputBox">
     <input type="submit" value="Show">
   </div>
 
-  <!-- <% if ($neo['neo_reference_id']) %>
+  <% if (@neo) %>
     <input type="hidden" name="_method" value="GET">
-  <% end %> -->
+  <% end %>
 </form>

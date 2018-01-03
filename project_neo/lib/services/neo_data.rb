@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pg'
 require_relative '../../controllers/neo_controller'
 
 class CurrentNeoData
@@ -37,3 +38,15 @@ end
 x = CurrentNeoData.new
 # p x.neo_ex_id
 p x.get_neo_id(3729835).keys
+# p x.get_neo_id(3729835)['estimated_diameter'].keys
+# p x.get_neo_id(3729835)['close_approach_data'][0].keys
+# p x.get_neo_id(3729835)['close_approach_data'][1].keys
+# p x.get_neo_id(3729835)['close_approach_data'][2].keys
+# p x.get_neo_id(3729835)['close_approach_data'][2]
+# p x.get_neo_id(3729835)['close_approach_data'][2]['relative_velocity']
+# p x.get_neo_id(3729835)['close_approach_data'][2]['miss_distance']
+p x.get_neo_id(3729835)['orbital_data'].keys
+# p x.get_neo_id(3542519)['orbital_data']['minimum_orbit_intersection']
+# p x.get_neo_id(3542519)['orbital_data']['inclination']
+# p x.get_neo_id(3542519)['orbital_data']['ascending_node_longitude']
+p x.get_neo_id(3542519)['orbital_data']['orbital_period']
