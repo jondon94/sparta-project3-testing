@@ -1,7 +1,7 @@
 <h2>Near Earth Objects (NEO's)</h2>
 
-<% $neo.each do |neo| %>
-  <div>
-    <h3><a href="/neo/<%= $neo['neo_reference_id'] %>"><%= $neo['name'] %></a></h3>
-  </div>
-<% end %>
+
+<div>
+  <h2>here</h2>
+  <h3><a href="/neo/<%= $neo_pull.get_neo_id(3542519) %>"><%= @neo %></a></h3>
+</div>
