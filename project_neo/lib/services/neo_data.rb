@@ -8,33 +8,21 @@ require_relative '../../controllers/neo_controller'
 class CurrentNeoData
   include HTTParty
 
-  attr_accessor :current_neo_data
   attr_accessor :current_neo_data_id
   attr_accessor :multi_NEO_data
+  attr_accessor :id
 
   #by ID
   base_uri 'https://api.nasa.gov/neo/rest/v1/neo'
 
-
-  def get_neo_id(neo_reference_id)
+  def get_neo_id(id)
     # neo_id_array = ['3729835', '3542519']
-    @current_neo_data_id = JSON.parse(self.class.get("/#{neo_reference_id}?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
+    @current_neo_data_id = JSON.parse(self.class.get("/#{id}?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
     # @multi_NEO_data = JSON.parse(self.class.post('/neo_reference_id', body: {"?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy" => neo_id_array}).body)
   end
 
-  def neo_ex_id
-    get_neo_id(@neo)
-  end
-
-  #by Date
-  # base_uri 'https://api.nasa.gov/neo/rest/v1/feed?'
-  #
-  # def get_neo(start_date, end_date)
-  #   @current_neo_data = JSON.parse(self.class.get("start_date=#{start_date}&end_date=#{end_date}&api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
-  # end
-  #
-  # def neo_ex
-  #   get_neo('2015-09-07', '2015-09-08')
+  # def neo_ex_id
+  #   get_neo_id(neo_reference_id)
   # end
 
 end

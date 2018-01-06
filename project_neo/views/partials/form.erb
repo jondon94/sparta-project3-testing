@@ -1,13 +1,13 @@
-<form action="/neo/<%= $neo_pull.neo_ex_id %>" method="GET">
+<form action="/neo/<%= $neo_id.get_neo_id(@id) %>" method="GET">
   <div class="inputBox">
     <label>ID</label>
-    <input type="search" placeholder="Enter an ID" value="<%= @neo %>">
+    <input type="search" placeholder="Enter an ID" value="<%= @id %>">
   </div>
   <div class="inputBox">
     <input type="submit" value="Show">
   </div>
 
-  <% if ($neo_pull.neo_ex_id) %>
+  <% if ($neo_id.get_neo_id(@id)) %>
     <input type="hidden" name="_method" value="GET">
   <% end %>
 </form>
