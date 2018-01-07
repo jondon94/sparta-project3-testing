@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title><%= @title %></title>
+    <link rel="stylesheet" href="/master_style.css">
   </head>
-  <body>
-    <%= erb(:'partials/navbar', :layout => false) %>
+  <body class="body_sec">
+    <div class="div_sec">
+      <%= erb(:'partials/navbar', :layout => false) %>
 
-    <%= yield %>
+      <%= yield %>
+
+    </div>
 
   </body>
 </html>

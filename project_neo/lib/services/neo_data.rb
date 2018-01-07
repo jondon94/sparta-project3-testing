@@ -34,7 +34,7 @@ x = CurrentNeoData.new
 # p x.get_neo_id(3729835)['close_approach_data'][0].keys
 # p x.get_neo_id(3729835)['close_approach_data'][1].keys
 # p x.get_neo_id(3729835)['close_approach_data'][2].keys
-# p x.get_neo_id(3729835)['close_approach_data'][2]
+p x.get_neo_id(3729835)['close_approach_data'][2]['close_approach_date']
 # p x.get_neo_id(3729835)['close_approach_data'][2]['relative_velocity']
 # p x.get_neo_id(3729835)['close_approach_data'][2]['miss_distance']
 # p x.get_neo_id(3729835)['orbital_data'].keys

@@ -7,6 +7,7 @@ describe 'users should be able to navigate around the website' do
     it "should send users to the relevant page when clicked" do
       @neo_site = NeoDataTestClass.new
       @neo_site.nav_test.visit_home_page
+      @neo_site.nav_test.click_browse_link
     end
   end
 end

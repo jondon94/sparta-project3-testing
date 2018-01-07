@@ -19,8 +19,7 @@ class NeoControl < Sinatra::Base
   # Comment these out for rspec tests
   $neo_brws = BrowseNeoData.new
   $neo_brws.brws_neo_id(@pgn)
-  $neo_id = CurrentNeoData.new
-  $neo_id.get_neo_id(@id)
+
 
   get "/" do
     @title = 'Homepage'

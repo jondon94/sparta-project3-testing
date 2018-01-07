@@ -1,8 +1,37 @@
 <h3>Asteroid Name: <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['name'] %></h3>
+<table>
+  <tr>
+    <th>Estimated Diameter</th>
+    <th>Minimum Estimated Diameter</th>
+    <th>Maximum Estimated Diameter</th>
+  </tr>
+  <tr>
+    <td>Kilometers</td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['kilometers']['estimated_diameter_min'] %></td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['kilometers']['estimated_diameter_max'] %></td>
+  </tr>
+  <tr>
+    <td>Meters</td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['meters']['estimated_diameter_min'] %></td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['meters']['estimated_diameter_max'] %></td>
+  </tr>
+  <tr>
+    <td>Feet</td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['feet']['estimated_diameter_min'] %></td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['feet']['estimated_diameter_max'] %></td>
+  </tr>
+  <tr>
+    <td>Miles</td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['miles']['estimated_diameter_min'] %></td>
+    <td><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['miles']['estimated_diameter_max'] %></td>
+  </tr>
+</table>
+
+
 <h3>Absolute Magnitude: <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['absolute_magnitude_h'] %></h3>
-<h3>Estimated Diameter</h3>
-<h3>(Kilometers): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['kilometers'] %></h3>
-<h3>(Meters): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['meters'] %></h3>
-<h3>(Feet): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['feet'] %></h3>
-<h3>(Miles): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['miles'] %></h3>
+<!-- <h3>Estimated Diameter</h3> -->
+<!-- <h3>(Kilometers): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['kilometers'] %></h3> -->
+<!-- <h3>(Meters): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['meters'] %></h3> -->
+<!-- <h3>(Feet): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['feet'] %></h3> -->
+<!-- <h3>(Miles): <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['estimated_diameter']['miles'] %></h3> -->
 <h3>Potentially Hazardous: <%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][@id]['is_potentially_hazardous_asteroid'] %></h3>

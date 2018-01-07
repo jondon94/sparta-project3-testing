@@ -202,7 +202,5 @@ describe NeoDataTestClass do
       expect(@neocode.get_neo_id(3729835)['orbital_data']['orbital_period'].to_f).to be_kind_of(Float)
     end
 
-
-
   end
 end
