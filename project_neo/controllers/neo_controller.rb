@@ -33,7 +33,15 @@ class NeoControl < Sinatra::Base
     erb :'pages/neo_index'
   end
 
-  get "/neo/:id" do
+  get "/neo_browse/:pgn" do
+    @title = "Browse"
+    @pgn = params[:pgn].to_i
+    @id = params[:id].to_i
+    erb :'pages/neo_browse'
+  end
+
+  get "/neo_browse/:pgn/:id" do
+    @pgn = params[:pgn].to_i
     @id = params[:id].to_i
     # $neo = neo_reference_id
     erb :'pages/show'
@@ -49,9 +57,4 @@ class NeoControl < Sinatra::Base
     erb :'pages/neo_date'
   end
 
-  get "/neo_browse/:pgn" do
-    @title = "Browse"
-    @pgn = params[:pgn].to_i
-    erb :'pages/neo_browse'
-  end
 end

@@ -1,9 +1,9 @@
  <% (0..19).each do |i| %>
-   <h3><a href="/neo/<%= i %>"><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][i]['name'] %></a></h3>
+   <h3><a href="/neo_browse/<%= @pgn %>/<%= i %>"><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][i]['name'] %></a></h3>
  <% end %>
 
 <span>
 <% (0..300).each do |pgn| %>
-  <a href="/neo_browse/<%= pgn %>">pgn</a>
+  <a href="/neo_browse/<%= pgn %>"><%= pgn %></a>
 <% end %>
 </span>
