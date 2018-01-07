@@ -1,0 +1,18 @@
+.div_sec {
+  position: absolute;
+  margin: 50px 50px;
+  padding: 20px 20px;
+  background-color: #fafafa
+}
+
+.body_sec {
+  background-image: url("deep_space_field.jpg");
+}
+
+.nav_sec {
+  text-align: center;
+}
+
+.link_sec {
+  padding: 20px 10px;
+}

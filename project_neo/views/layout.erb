@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @title %></title>
+    <link rel="stylesheet" href="/master_style.css">
+  </head>
+  <body class="body_sec">
+    <div class="div_sec">
+      <%= erb(:'partials/navbar', :layout => false) %>
+
+      <%= yield %>
+
+    </div>
+
+  </body>
+</html>
