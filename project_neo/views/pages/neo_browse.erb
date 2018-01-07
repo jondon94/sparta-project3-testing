@@ -1,14 +1,9 @@
-<!-- <a href="/neo/"><h3><%= $neo_brws.brws_neo_id %></h3></a> -->
-<!-- <a href="/neo/"><h3><%= $neo_brws.brws_neo_id['near_earth_objects'] %></h3></a> -->
-<!-- <a href="/neo/"><h3><%= $neo_brws.brws_neo_id['near_earth_objects'][0]['name'] %></h3></a> -->
-<!-- <a href="/neo/"><h3><%= $neo_brws.brws_neo_id['links'] %></h3></a> -->
-<!-- <a href="#"><h3><%= $neo_brws.brws_neo_id['links'] %></h3></a> -->
+ <% (0..19).each do |i| %>
+   <h3><a href="/neo/<%= i %>"><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][i]['name'] %></a></h3>
+ <% end %>
 
-
-<% (0..19).each do |i| %>
-  <h3><a href="/neo/<%= i %>"><%= $neo_brws.brws_neo_id['near_earth_objects'][i]['name'] %></a></h3>
-  <h3><%= $neo_brws.brws_neo_id['near_earth_objects'][i]['absolute_magnitude_h'] %></h3>
-  <h3><%= $neo_brws.brws_neo_id['near_earth_objects'][i]['estimated_diameter'] %></h3>
-  <h3><%= $neo_brws.brws_neo_id['near_earth_objects'][i]['is_potentially_hazardous_asteroid'] %></h3>
-  <span>-----------------------</span>
+<span>
+<% (0..300).each do |pgn| %>
+  <a href="/neo_browse/<%= pgn %>">pgn</a>
 <% end %>
+</span>

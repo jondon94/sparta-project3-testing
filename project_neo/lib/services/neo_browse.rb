@@ -13,8 +13,9 @@ class BrowseNeoData
   #by ID
   base_uri 'https://api.nasa.gov/neo/rest/v1/neo'
 
-  def brws_neo_id
-    @browse_neo_data = JSON.parse(self.class.get("/browse?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
+  def brws_neo_id(pgn)
+    # @browse_neo_data = JSON.parse(self.class.get("/browse?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
+    @browse_neo_data = JSON.parse(self.class.get("/browse?page=#{pgn}&size=20&api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
   end
 
 end
