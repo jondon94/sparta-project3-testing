@@ -16,20 +16,12 @@ class NeoControl < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  # Comment these out for rspec tests
   $neo_brws = BrowseNeoData.new
   $neo_brws.brws_neo_id(@pgn)
-
 
   get "/" do
     @title = 'Homepage'
     erb :'pages/homepage'
-  end
-
-  get "/neo_index" do
-    # $neo = neo_reference_id
-    @title = "Near Earth Objects"
-    erb :'pages/neo_index'
   end
 
   get "/neo_browse/:pgn" do
@@ -42,18 +34,12 @@ class NeoControl < Sinatra::Base
   get "/neo_browse/:pgn/:id" do
     @pgn = params[:pgn].to_i
     @id = params[:id].to_i
-    # $neo = neo_reference_id
     erb :'pages/show'
   end
 
   get "/neo" do
     @title = "Near Earth Objects"
-    # $neo = neo_reference_id
     erb :'pages/neo'
   end
-
-  get "/neo_date" do
-    erb :'pages/neo_date'
-  end
-
+  
 end
