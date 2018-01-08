@@ -1,8 +1,3 @@
-require 'httparty'
-require 'json'
-require 'sinatra'
-require 'sinatra/reloader'
-require 'pg'
 require_relative '../lib/services/neo_data'
 require_relative '../lib/services/neo_browse'
 
@@ -41,5 +36,10 @@ class NeoControl < Sinatra::Base
     @title = "Near Earth Objects"
     erb :'pages/neo'
   end
-  
+
+  get "/planets/:id" do
+    id = params[:id].to_i
+    erb :'pages/planet_show'
+  end
+
 end
