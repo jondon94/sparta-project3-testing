@@ -2,7 +2,7 @@
    <h3><a href="/neo_browse/<%= @pgn %>/<%= i %>"><%= $neo_brws.brws_neo_id(@pgn)['near_earth_objects'][i]['name'] %></a></h3>
  <% end %>
 
-<span>
+<span id="page_nav">
 <% (0..895).each do |pgn| %>
   <a href="/neo_browse/<%= pgn %>"><%= pgn %></a>
 <% end %>
