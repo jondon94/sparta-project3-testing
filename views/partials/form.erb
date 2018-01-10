@@ -1,13 +1,19 @@
-<form action="/neo/<%= $neo_id.get_neo_id(@id) %>" method="GET">
+<form action="/planets/:<%= @rock.id %>" method="POST">
+
   <div class="inputBox">
-    <label>ID</label>
-    <input type="search" placeholder="Enter an ID" value="<%= @id %>">
+    <label>Title</label>
+    <input type="text" name="title" placeholder="Enter a title" value="<%= @rock.title %>">
   </div>
   <div class="inputBox">
-    <input type="submit" value="Show">
+    <label>Body</label>
+    <textarea name="body" rows="8" cols="80" placeholder="The body of post"><%= @rock.body %></textarea>
+  </div>
+  <div class="inputBox">
+      <input type="submit" value="Save Post">
   </div>
 
-  <% if ($neo_id.get_neo_id(@id)) %>
-    <input type="hidden" name="_method" value="GET">
+  <% if (@rock.id) %>
+    <input type="hidden" name="_method" value="PUT">
   <% end %>
+
 </form>

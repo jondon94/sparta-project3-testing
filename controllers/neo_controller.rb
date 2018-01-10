@@ -37,9 +37,39 @@ class NeoControl < Sinatra::Base
     erb :'pages/neo'
   end
 
-  get "/planets/:id" do
+  get "/planets" do
+    @rock = Planets.all
+    erb :'pages/planet_index'
+  end
+
+  get '/planets/new' do
     id = params[:id].to_i
+    @rock = Planets.new
+    erb :'pages/new'
+  end
+
+  get "/planets/:id" do
+    @title = 'Planet'
+    id = params[:id].to_i
+    @rock = Planets.find(id)
     erb :'pages/planet_show'
+  end
+
+  post '/planets/:id' do
+    planet = Planets.new
+    planet.title = params[:title]
+    planet.body = params[:body]
+    planet.save
+    redirect '/planets'
+  end
+
+  put '/planets/:id' do
+    id = params[:id].to_i
+    planet = Planets.find(id)
+    planet.title = params[:title]
+    planet.body = params[:body]
+    planet.save
+    redirect '/planets'
   end
 
 end
