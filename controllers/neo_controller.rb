@@ -69,7 +69,7 @@ class NeoControl < Sinatra::Base
     planet.title = params[:title]
     planet.body = params[:body]
     planet.save
-    redirect '/planets/:id'
+    redirect '/planets'
   end
 
   delete '/planets/:id' do

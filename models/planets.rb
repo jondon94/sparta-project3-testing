@@ -7,7 +7,7 @@ class Planets
     if(!self.id)
       sql = "INSERT INTO rock (title , body) VALUES ('#{self.title}' , '#{self.body}')"
     else
-      sql = "UPDATE rock SET title='#{self.title}', body='#{self.body}', WHERE id = #{self.id}"
+      sql = "UPDATE rock SET title='#{self.title}', body='#{self.body}' WHERE id = #{self.id}"
     end
     conn.exec(sql)
   end
