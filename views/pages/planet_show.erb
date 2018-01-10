@@ -3,3 +3,9 @@
   <h3><%= @rock.title %></h3>
   <p><%= @rock.body %></p>
 </div>
+<a href="/planets/<%= @rock.id %>/edit">edit</a>
+
+<form action="/planets/<%= @rock.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="name" value="Delete">
+</form>

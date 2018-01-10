@@ -5,7 +5,7 @@ class Planets
   def save
     conn = Planets.open_connection
     if(!self.id)
-      sql = "INSERT INTO rock (title, body) VALUES ('#{self.title}', '#{self.body}')"
+      sql = "INSERT INTO rock (title , body) VALUES ('#{self.title}' , '#{self.body}')"
     else
       sql = "UPDATE rock SET title='#{self.title}', body='#{self.body}', WHERE id = #{self.id}"
     end
@@ -24,7 +24,6 @@ class Planets
 
   def self.all
     conn = self.open_connection
-    #this is where it broke
     sql = "SELECT id,title,body FROM rock ORDER BY id"
     results = conn.exec(sql)
     rock = results.map do |planet|
@@ -47,5 +46,4 @@ class Planets
     planet.body = planet_data['body']
     planet
   end
-
 end

@@ -55,7 +55,7 @@ class NeoControl < Sinatra::Base
     erb :'pages/planet_show'
   end
 
-  post '/planets/:id' do
+  post '/planets/' do
     planet = Planets.new
     planet.title = params[:title]
     planet.body = params[:body]
@@ -69,7 +69,19 @@ class NeoControl < Sinatra::Base
     planet.title = params[:title]
     planet.body = params[:body]
     planet.save
+    redirect '/planets/:id'
+  end
+
+  delete '/planets/:id' do
+    id = params[:id].to_i
+    Planets.destroy(id)
     redirect '/planets'
+  end
+
+  get '/planets/:id/edit' do
+    id = params[:id].to_i
+    @rock = Planets.find(id)
+    erb :'pages/edit'
   end
 
 end
