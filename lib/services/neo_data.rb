@@ -15,9 +15,7 @@ class CurrentNeoData
   base_uri 'https://api.nasa.gov/neo/rest/v1/neo'
 
   def get_neo_id(id)
-    # neo_id_array = ['3729835', '3542519']
     @current_neo_data_id = JSON.parse(self.class.get("/#{id}?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy").body)
-    # @multi_NEO_data = JSON.parse(self.class.post('/neo_reference_id', body: {"?api_key=z9t2OsrUm9tT1D3ccMFVXzC69q6wN7K0CRXuJvQy" => neo_id_array}).body)
   end
 
 end
