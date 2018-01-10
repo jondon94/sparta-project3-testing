@@ -3,7 +3,7 @@ require 'json'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
-require_relative '../../controllers/neo_controller'
+require_relative '../../controllers/api_controllers/neo_controller'
 
 class CurrentNeoData
   include HTTParty
