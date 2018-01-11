@@ -1,7 +1,7 @@
 require_relative 'services/neo_data'
 require_relative '../spec/test_situations/cpybr_homepage'
 require 'sinatra'
-require 'sinatra/reloader'
+
 
 class NeoDataTestClass
 
