@@ -1,0 +1,7 @@
+
+<% @rock.each do |rock| %>
+<div class="general">
+  <h3><a href="/planets/<%= rock.id %>"><%= rock.title %></a></h3>
+  <p><%= rock.body %></p>
+</div>
+<% end %>

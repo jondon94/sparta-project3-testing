@@ -1,3 +1,4 @@
+
 require 'spec_helper'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -200,6 +201,30 @@ describe NeoDataTestClass do
 
     it "should have a float orbital period in days of the NEO" do
       expect(@neocode.get_neo_id(3729835)['orbital_data']['orbital_period'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float of perihilion distance" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['perihelion_distance'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float for perihilion arguement" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['perihelion_arguement'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float for aphelion distance" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['aphelion_distance'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float for perihilion time" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['perihelion_time'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float for mean motion" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['mean_motion'].to_f).to be_kind_of(Float)
+    end
+
+    it "should have a float for mean anomaly" do
+      expect(@neocode.get_neo_id(3729835)['orbital_data']['mean_anomaly'].to_f).to be_kind_of(Float)
     end
 
   end

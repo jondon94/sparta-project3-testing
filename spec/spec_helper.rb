@@ -1,7 +1,7 @@
 require 'json'
 require 'capybara'
 require_relative '../lib/neo_masterclass'
-require_relative '../views/pages/cpybr_homepage'
+require_relative './test_situations/cpybr_homepage'
 require 'httparty'
 require 'sinatra'
 require 'sinatra/reloader'
